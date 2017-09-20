@@ -19,3 +19,4 @@ deploy:
   env: TweetInsight-env
   on:
     repo: TwiceUsed-Spiralizer/test-repo
+  bucket_name: "tweet-insight3000"
