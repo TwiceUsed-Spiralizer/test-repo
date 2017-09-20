@@ -1,12 +1,21 @@
 language: node_js
 node_js:
-  - "lts/*"
+- lts/*
 before_install:
-  - npm install -g grunt-cli
+- npm install -g grunt-cli
 install:
-  - npm install
+- npm install
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 script:
-  - npm run build
+- npm run build
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: access_key_id
+  secret_access_key: secret_access_key
+  region: us-east-1
+  app: tweet-insight
+  env: TweetInsight-env
+  on:
+    repo: TwiceUsed-Spiralizer/test-repo
